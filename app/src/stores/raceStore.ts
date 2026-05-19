@@ -49,7 +49,7 @@ export const useRaceStore = defineStore('race', () => {
       const response_data = await response.json()
       console.log('API response:', response_data)
       const data = response_data.data
-      races.value = data.next_to_go_ids.map(id => data.race_summaries[id])
+      races.value = data.next_to_go_ids.map((id: string) => data.race_summaries[id]).slice(0, 10)
       console.log('Races loaded:', races.value)
     } catch (err) {
       error.value = err instanceof Error ? err.message : 'An error occurred'

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "PowerShell(npm install -D jest-environment-jsdom --legacy-peer-deps)"
+    ]
+  }
+}

@@ -52,6 +52,21 @@ npm run build
 npm run preview
 ```
 
+### Testing
+
+```bash
+# Run tests once
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+The project uses **Jest** for unit testing with **TypeScript** support. Test files are located next to the source code with `.spec.ts` extension.
+
 ## Project Structure
 
 ```
@@ -130,3 +145,36 @@ Reusable table component that displays race data:
 - Accepts `races` as a prop
 - Displays meeting name, race number, and countdown
 - Can be reused in other parts of the app
+
+## Testing
+
+The project includes comprehensive unit tests for the Pinia store using Jest.
+
+### Test Coverage
+
+**Race Store Tests** (`src/stores/raceStore.spec.ts`):
+- Initial state validation (4 tests)
+- Category selection and filtering (2 tests)
+- Race sorting by start time
+- Expired race filtering (races older than 1 minute)
+- Race limiting (max 5 races)
+- Time update initialization
+- API fetch function existence
+
+**App Integration Tests** (`src/App.spec.ts`):
+- Racing category definitions
+- Category selection toggle functionality (3 tests)
+- Race filtering by category (2 tests)
+- Loading and error state handling (3 tests)
+
+**Total: 23 passing tests**
+
+### Running Tests
+
+```bash
+npm test              # Run all tests once
+npm run test:watch    # Run tests in watch mode (great for development)
+npm run test:coverage # Generate coverage report
+```
+
+All tests are configured with TypeScript support and use Pinia's test utilities for store testing.
