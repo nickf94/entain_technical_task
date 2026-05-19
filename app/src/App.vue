@@ -68,7 +68,6 @@
 </template>
 
 <script setup lang="ts">
-import NextRaces from './NextRaces.vue'
 import RaceTable from './RaceTable.vue'
 import { onMounted } from 'vue'
 import { useRaceStore } from './stores/raceStore'

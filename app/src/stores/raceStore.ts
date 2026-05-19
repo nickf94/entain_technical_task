@@ -47,10 +47,8 @@ export const useRaceStore = defineStore('race', () => {
       })
       if (!response.ok) throw new Error('Network response was not ok')
       const response_data = await response.json()
-      console.log('API response:', response_data)
       const data = response_data.data
       races.value = data.next_to_go_ids.map((id: string) => data.race_summaries[id]).slice(0, 10)
-      console.log('Races loaded:', races.value)
     } catch (err) {
       error.value = err instanceof Error ? err.message : 'An error occurred'
     } finally {
